@@ -1,0 +1,33 @@
+
+.imag{
+  padding-top: 4%;
+
+}
+.image-upload > input
+{
+    display: none;
+}
+
+.image-upload img
+{
+    width: 80px;
+    cursor: pointer;
+    border: 2px solid gray;
+}
+  
+ .image-upload  
+{
+       border: 2px solid rgb(192, 190, 190);
+}
+.image-upload i{
+    margin-left: 230%;
+}
+.image-text{
+    text-align: center;
+}
+.upload{
+  color: lightgreen;
+}
+.upload:hover{
+  color: rgb(94, 124, 180);
+}

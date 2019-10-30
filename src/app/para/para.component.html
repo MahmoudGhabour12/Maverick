@@ -1,0 +1,103 @@
+<section class="container-fluid row">
+  <div class="row col-2 col-lg-2 col-2 col-s-12  ">
+    <app-nav></app-nav>
+  </div>
+
+  <!--middle form-->
+
+  <div id="content" class="col-10 col-lg-10 col-12 middle">
+    <div class="row">
+      <section class="line col-5 col-lg-5 col-md-12 col-12">
+        <div class="input-group input-group-lg mb-1">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-search"></i></span>
+          </div>
+          <input type="text" placeholder="Find a user ,team , quiz" class="form-control input-group-text"
+            aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <section class="container border bg-light text-dark mt-5 p-3">
+          <h4>Outcomes...</h4>
+          <form #myForm="ngForm" (ngSubmit)='Addpara(myForm.value)'>
+            <div class="form-group">
+              <label for="outcome title"><span class="star">*</span>Outcome Title</label>
+              <span class="counter" *ngIf="values.length == 0; else y ">10/100</span>
+              <ng-template #y><span class="counter pt-5"> {{values.length}}/100</span></ng-template>
+
+              <input class="form-control p-2" placeholder=" " name="outcome_title" maxlength="100"
+                (keyup)="onKey($event)" ngmodel>
+            </div>
+            <div class="form-group">
+              <div class="row outcomes">
+                <div class="col-4 out"> <a [routerLink]="['/para']"><i class="fas fa-sliders-h fa-4x"></i>
+                    <h5 class="outcometext">Paragraph </h5>
+                  </a> </div>
+                <div class="col-4 out"> <a [routerLink]="['/url']"><i class="fas fa-link fa-4x"></i>
+                    <h5 class="outcometext">Url</h5>
+                  </a></div>
+                <div class="col-4 out"> <a><i class="fas fa-photo-video fa-4x"></i>
+                    <h5 class="outcometext">Video</h5>
+                  </a></div>
+                <div class="col-4 out"> <a [routerLink]="['/para']"><i class="fas fa-sliders-h fa-4x"></i>
+                    <h5 class="outcometext">Paragraph</h5>
+                  </a> </div>
+                <div class="col-4 out"> <a [routerLink]="['/url']"><i class="fas fa-link fa-4x"></i>
+                    <h5 class="outcometext">Url</h5>
+                  </a> </div>
+                <div class="col-4 out"><a> <i class="fas fa-photo-video fa-4x"></i>
+                    <h5 class="outcometext">Video</h5>
+                  </a> </div>
+
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="outcome title"><span class="star">*</span>Outcome paragraph</label>
+
+              <span class="counter3" *ngIf="span.length == 0; else a ">10/100</span>
+              <ng-template #a><span class="counter3 pt-5"> {{span.length}}/100</span></ng-template>
+
+
+              <textarea class="form-control p-2" placeholder=" " name="outcome_para" (keyup)="Key($event)"
+                maxlength="100" ngModel></textarea>
+            </div>
+            <div class="form-group">
+              <a [routerLink]="['/home']"> <button class="btn btn-outline-secondary">Back</button></a>
+              <button type="submit" class="btn btn-success addbtn  ">Save and Creat Paragraph</button>
+            </div>
+
+          </form>
+        </section>
+      </section>
+
+
+
+      <!--last form-->
+      <div class="line col-7 col-lg-7 col-md-12 col-12 last">
+
+        <div class="prev ">
+          <h6>live preview</h6>
+          <div class="titlepre">
+            <h2>{{values}}</h2>
+          </div>
+
+
+          <img src="../../assets/images/22.jpg" alt="live image" class="liveimage img-fluid">
+          <p>Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Architecto officiis veritatis natus assumenda fugit libero,
+            omnis, ipsum delectus minima blanditiis aperiam recusandae,
+            odit unde consectetur in deleniti eius sint soluta.</p>
+          <br>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit dolore maxime enim cupiditate
+            numquam blanditiis. Veniam, repellat aspernatur distinctio quibusdam, optio temporibus,
+            quae perferendis eaque consequuntur et inventore magni.
+          </p>
+        </div>
+
+
+      </div>
+
+
+    </div>
+  </div>
+</section>

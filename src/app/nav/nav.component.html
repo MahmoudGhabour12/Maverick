@@ -1,0 +1,39 @@
+<!-- Sidebar Holder -->
+<nav id="sidebar">
+   <div class="sidebar-header">
+      <div class="row">
+      <h1 class="text-left col-4">quiz </h1>
+      <i class="col-4 fas fa-th-list text-right pt-3 pl-2 fa-2x"></i>
+   </div>
+   </div>
+   <ul class="list-unstyled components">
+      <li class="">
+         <a [routerLinkActive]="['active']" [routerLink]="['/home']" data-toggle="collapse" aria-expanded="false">
+            <i class="fas fa-align-center pr-2"></i> <span>Home</span></a>
+      </li>
+
+      <li class="">
+         <a [routerLinkActive]="['active']" [routerLink]="['/quiz']" data-toggle="collapse" aria-expanded="false">
+            <i class="far fa-lightbulb pr-2"></i>
+            <span>Quiz</span></a>
+      </li>
+
+      <li class="">
+         <a [routerLinkActive]="['active']" [routerLink]="['/questions']" data-toggle="collapse" aria-expanded="false">
+            <i class="fas fa-question pr-2"></i>
+            <span>Question</span></a>
+      </li>
+      <li class="">
+         <a [routerLinkActive]="['active']" [routerLink]="['/para']" data-toggle="collapse" aria-expanded="false">
+            <i class="far fa-lightbulb pr-2"></i>
+            <span>Paraghraph</span></a>
+      </li>
+
+      <li class="">
+         <a [routerLinkActive]="['active']" [routerLink]="['/url']" data-toggle="collapse" aria-expanded="false">
+            <i class="fas fa-link pr-2"></i>
+            <span>url</span></a>
+      </li>
+   </ul>
+
+</nav>

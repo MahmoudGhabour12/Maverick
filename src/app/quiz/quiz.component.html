@@ -1,0 +1,84 @@
+<section class="container-fluid row">
+  <div class="row col-2 col-lg-2  col-12 ">
+    <app-nav></app-nav>
+  </div>
+  <!--middle form-->
+  <!-- quiz form-->
+  <div id="content" class="col-10 col-lg-10 col-12  middle ">
+    <div class="row">
+      <section class="col-5 col-lg-5 col-12">
+        <div class="input-group input-group-lg mb-1">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-search"></i></span>
+          </div>
+          <input type="text" placeholder="Find a user ,team , quiz" class="form-control input-group-text"
+            aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <section class="container border bg-light text-dark mt-2 p-3">
+          <h4>Add New Quiz</h4>
+          <hr>
+          <form #myForm="ngForm" (ngSubmit)='AddQuiz(myForm.value)' enctype="multipart/form-data" method="POST">
+            <div class="form-group">
+              <label for=""> <span class="star">*</span> Quiz Name</label>
+              <span class="counter" *ngIf="span.length == 0; else z ">10/100</span>
+              <ng-template #z><span class="counterchange pt-5"> {{span.length}}/100</span></ng-template>
+              <input class="form-control p-2" maxlength="100" placeholder="quiz name" name="quiz_name" ngModel
+                (keyup)="Key($event)">
+            </div>
+            <h6> <span class="star">*</span> Quiz images</h6>
+            <div class="form-group image-upload">
+              <label for="file-input">
+                <i class="fas fa-upload pt-4 fa-5x upload text-center"></i>
+              </label>
+              <span style="color:red;" *ngIf="message">{{message}}</span>
+              <input class="" id="file-input" #file type="file" accept='image/*' (change)="preview(file.files)"
+                name="quiz_images" ngModel />
+              <div class="image-text">Upload Quiz Image</div>
+            </div> <span class="right">Max Size: 2MB</span>
+            <span class="counter3">Required Dimensions:600 x 400 </span>
+
+            <hr>
+            <div class="form-group">
+              <label for=""> <span class="star">*</span> Quiz Title</label>
+              <span class="counter" *ngIf="values.length == 0; else y ">10/100</span>
+              <ng-template #y><span class="counter pt-5"> {{values.length}}/100</span></ng-template>
+              <input class="form-control p-2" placeholder="enter the quiz title" name="quiz_title"
+                (keyup)="onKey($event)" ngModel>
+
+            </div>
+            <div class="form-group">
+              <label for=""> <span class="star">*</span> Quiz Description</label>
+              <span class="counter2" *ngIf="Textare.length == 0; else x ">10/100</span>
+              <ng-template #x><span class="counter2 pt-5"> {{Textare.length}}/100</span></ng-template>
+
+              <textarea class="form-control p-2" placeholder=" " name="quiz_description" (keyup)="Textarea($event)"
+                ngModel></textarea>
+            </div>
+            <div class="form-group">
+              <a [routerLink]="['/home']"> <button class="btn btn-outline-secondary">Back</button></a>
+              <button type="submit" class="btn btn-success addbtn  ">Save and Creat Quiz</button>
+            </div>
+          </form>
+        </section>
+      </section>
+      <!--end of quiz form-->
+      <!--live preview -->
+      <div class="line col-7 col-lg-7 col-md-12 col-12 last">
+        <div class="prev">
+          <h4>live preview</h4>
+          <div class="banner text-center  mb-5">
+            <div class="banner-color">
+              <div class="imag-p text-center quote">
+                <p class="imag ">
+                </p>
+                <img [src]="imgURL" height="200" *ngIf="imgURL" class="liveimage img-fluid">
+                <p class="second-text"> {{values}}</p><br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--end of live preview-->
